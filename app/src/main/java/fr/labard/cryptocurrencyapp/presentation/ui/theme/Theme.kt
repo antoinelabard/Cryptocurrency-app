@@ -1,4 +1,4 @@
-package fr.labard.cryptocurrencyapp.ui.theme
+package fr.labard.cryptocurrencyapp.presentation.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme

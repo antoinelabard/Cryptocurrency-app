@@ -1,4 +1,4 @@
-package fr.labard.cryptocurrencyapp.ui.theme
+package fr.labard.cryptocurrencyapp.presentation.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
