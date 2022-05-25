@@ -1,4 +1,4 @@
-package fr.labard.cryptocurrencyapp.domain.use_case.get_coin
+package fr.labard.cryptocurrencyapp.domain.use_case.get_coins
 
 import fr.labard.cryptocurrencyapp.common.Resource
 import fr.labard.cryptocurrencyapp.data.remote.dto.toCoin
