@@ -5,5 +5,5 @@ import fr.labard.cryptocurrencyapp.data.remote.dto.CoinDto
 
 interface CoinRepository {
     suspend fun getCoins(): List<CoinDto>
-    suspend fun getCoinById(): CoinDetailDto
+    suspend fun getCoinById(coinId: String): CoinDetailDto
 }
