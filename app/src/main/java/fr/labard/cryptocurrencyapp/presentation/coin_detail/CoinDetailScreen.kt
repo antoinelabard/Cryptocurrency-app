@@ -36,13 +36,13 @@ fun CoinDetailScreen(
                         horizontalArrangement = Arrangement.SpaceBetween
                     ) {
                         Text(
-                            textAlign = "${coin.rank}. ${coin.name} (${coin.symbol}",
+                            text = "${it.rank}. ${it.name} (${it.symbol}",
                             style = MaterialTheme.typography.h2,
                             modifier = Modifier.weight(8f)
                         )
                         Text(
-                            text = if (coin.isActive) "active" else "inactive",
-                            color = if (coin.isActive) Color.Green else Color.Red,
+                            text = if (it.isActive) "active" else "inactive",
+                            color = if (it.isActive) Color.Green else Color.Red,
                             fontStyle = FontStyle.Italic,
                             textAlign = TextAlign.End,
                             modifier = Modifier
@@ -52,7 +52,7 @@ fun CoinDetailScreen(
                     }
                     Spacer(modifier = Modifier.height(15.dp))
                     Text(
-                        text = coin.description,
+                        text = it.description,
                         style = MaterialTheme.typography.body2
                     )
                     Spacer(modifier = Modifier.height(15.dp))
@@ -66,7 +66,7 @@ fun CoinDetailScreen(
                         crossAxisSpacing = 10.dp,
                         modifier = Modifier.fillMaxWidth()
                     ) {
-                        coin.tags.forEach { tag -> CoinTag(tag = tag) }
+                        it.tags.forEach { tag -> CoinTag(tag = tag) }
                     }
                     Spacer(modifier = Modifier.height(15.dp))
                     Text(
@@ -74,14 +74,16 @@ fun CoinDetailScreen(
                         style = MaterialTheme.typography.h3
                     )
                 }
-                items(coin.team) { teamMember ->
-                    TeamListItem(
-                        teamMember = teamMember,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(10.dp)
-                    )
-                    Divider()
+                it.team.forEach { teamMember ->
+                    item {
+                        TeamListItem(
+                            teamMember = teamMember,
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(10.dp)
+                        )
+                        Divider()
+                    }
                 }
             }
         }
