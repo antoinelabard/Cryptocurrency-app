@@ -8,8 +8,11 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import fr.labard.cryptocurrencyapp.data.remote.dto.TeamMember
 
 @Composable
@@ -23,7 +26,10 @@ fun TeamListItem(
     ) {
         Text(
             text = teamMember.name,
-            style = MaterialTheme.typography.h4
+            style = TextStyle(
+                fontWeight = FontWeight.Bold,
+                fontSize = 15.sp
+            )
         )
         Spacer(modifier = Modifier.height(4.dp))
         Text(

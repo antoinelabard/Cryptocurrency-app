@@ -11,9 +11,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.google.accompanist.flowlayout.FlowRow
 import fr.labard.cryptocurrencyapp.presentation.coin_detail.components.CoinTag
@@ -36,8 +39,11 @@ fun CoinDetailScreen(
                         horizontalArrangement = Arrangement.SpaceBetween
                     ) {
                         Text(
-                            text = "${it.rank}. ${it.name} (${it.symbol}",
-                            style = MaterialTheme.typography.h2,
+                            text = "${it.rank}. ${it.name} (${it.symbol})",
+                            style = TextStyle(
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 30.sp
+                            ),
                             modifier = Modifier.weight(8f)
                         )
                         Text(
@@ -58,7 +64,10 @@ fun CoinDetailScreen(
                     Spacer(modifier = Modifier.height(15.dp))
                     Text(
                         text = "Tags",
-                        style = MaterialTheme.typography.h3
+                        style = TextStyle(
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 25.sp
+                        )
                     )
                     Spacer(modifier = Modifier.height(15.dp))
                     FlowRow(
@@ -71,7 +80,10 @@ fun CoinDetailScreen(
                     Spacer(modifier = Modifier.height(15.dp))
                     Text(
                         text = "Team",
-                        style = MaterialTheme.typography.h3
+                        style = TextStyle(
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 25.sp
+                        )
                     )
                 }
                 it.team.forEach { teamMember ->
